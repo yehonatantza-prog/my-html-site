@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>טופס פרטים</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            padding: 30px;
+        }
+        table {
+            border-collapse: collapse;
+            margin: auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+        td {
+            padding: 10px 15px;
+        }
+        input[type="text"],
+        input[type="number"],
+        input[type="email"],
+        input[type="tel"] {
+            width: 250px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="reset"] {
+            background-color: #ff6666;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="reset"]:hover {
+            background-color: #ff3333;
+        }
+        button {
+            background-color: #ff6666;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ff3333;
+        }
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<h2>פרטים אישיים :it's קריוקי</h2>
+
+<form>
+    <table>
+        <tr>
+            <td><label for="fullname">שם מלא:</label></td>
+            <td><input type="text" id="fullname" name="fullname" required></td>
+        </tr>
+        <tr>
+            <td><label for="age">גיל:</label></td>
+            <td><input type="number" id="age" name="age" min="0" max="120" required></td>
+        </tr>
+        <tr>
+            <td><label for="email">אימייל:</label></td>
+            <td><input type="email" id="email" name="email" required></td>
+        </tr>
+        <tr>
+            <td><label for="phone">מספר טלפון:</label></td>
+            <td><input type="tel" id="phone" name="phone" pattern="[0-9]{9,10}" required></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;">
+                <input type="reset" value="נקה">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;">
+                <button onclick="location.href='Untitled-5.html'">שלח</button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>

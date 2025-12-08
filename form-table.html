@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>טופס וטבלה</title>
+    <link rel="stylesheet" href=".css">
+</head>
+<body>
+
+    <div class="container">
+        <form>
+            <h2>טופס יצירת קשר</h2>
+
+            <label for="name">שם מלא:</label>
+            <input type="text" id="name" name="name" placeholder="הכניסו את שמכם">
+
+            <label for="interest">תחום עניין:</label>
+            <select id="interest" name="interest">
+                <option>טכנולוגיה</option>
+                <option>מוזיקה</option>
+                <option>טיולים</option>
+            </select>
+
+            <label for="message">הודעה:</label>
+            <textarea id="message" name="message" rows="5" placeholder="כתבו כאן הודעה..."></textarea>
+
+            <button type="submit">שלח</button>
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>מס'</th>
+                    <th>נושא</th>
+                    <th>תיאור</th>
+                    <th>רמת עניין</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>טכנולוגיה</td>
+                    <td>התפתחויות בעולם החדשנות</td>
+                    <td>גבוהה</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>מוזיקה</td>
+                    <td>כלי נגינה והפקה</td>
+                    <td>בינונית</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>טיולים</td>
+                    <td>מסלולים בארץ ובעולם</td>
+                    <td>בינונית</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
