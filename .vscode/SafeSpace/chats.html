@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeSpace - Chat</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="api.js"></script>
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <a href="index.html" class="nav-item" title="Home">🏠</a>
+        <a href="chats.html" class="nav-item active" title="Chat">💬</a>
+        <a href="Videos.html" class="nav-item" title="Videos">🎬</a>
+        <a href="MyPage.html" class="nav-item" title="My Page">👤</a>
+        <a href="Resources.html" class="nav-item" title="Resources">📚</a>
+        <a href="#" onclick="SafeSpaceAPI.logout(); return false;" class="nav-item" title="Logout" style="margin-top: auto; color: #e53e3e;">🚪</a>
+    </nav>
+
+    <main>
+        <h1>💬 צ'אט וההודעות שלך</h1>
+        <p>התחבר עם אנשים מהקהילה ודבר על החוויות שלך</p>
+
+        <!-- Search/People Discovery -->
+        <div class="card">
+            <h2>מצא אנשים לדבר איתם</h2>
+            <div class="search-bar">
+                <input type="text" id="search-input" class="search-input" placeholder="חפש שם משתמש...">
+                <button class="search-btn" onclick="searchPeople()">חפש</button>
+            </div>
+            <div id="search-results" style="display: none;">
+                <h3>תוצאות חיפוש:</h3>
+                <div id="people-results" class="people-grid"></div>
+            </div>
+        </div>
+
+        <!-- Messaging Interface -->
+        <div class="messaging-container">
+            <!-- Conversations List -->
+            <div class="conversations-list">
+                <div style="padding: 15px; border-bottom: 1px solid #e2e8f0; font-weight: 600; color: #2d3748;">הודעות</div>
+                <div id="conversations-container">
+                    <div style="padding: 20px; text-align: center; color: #a0aec0;">
+                        אין שיחות עדיין
+                    </div>
+                </div>
+            </div>
+
+            <!-- Message Thread -->
+            <div id="message-thread" style="display: none;">
+                <div class="thread-header">
+                    <div>
+                        <h3 id="thread-username" style="margin: 0; color: #2d3748;"></h3>
+                        <p id="thread-usertype" style="margin: 0; color: #a0aec0; font-size: 12px;"></p>
+                    </div>
+                </div>
+
+                <div class="thread-messages" id="messages-container"></div>
+
+                <div class="message-input-area">
+                    <input type="text" id="message-input" class="message-input" placeholder="הקלד הודעה...">
+                    <button class="send-btn" onclick="sendMessage()">שלח</button>
+                </div>
+            </div>
+
+            <!-- No Selection -->
+            <div id="no-selection" style="display: flex; align-items: center; justify-content: center; text-align: center; color: #a0aec0;">
+                <p>בחר שיחה או חפש אנשים להתחיל</p>
+            </div>
+        </div>
+    </main>
+
+    <style>
+        main {
+            max-width: 1200px;
+        }
+        .messaging-container {
+            margin-top: 30px;
+        }
+    </style>
+
+    <script>
+        let currentChatUserId = null;
+
+        async function loadConversations() {
+            try {
+                const conversations = await SafeSpaceAPI.getConversations();
+                const container = document.getElementById('conversations-container');
+
+                if (!conversations || conversations.length === 0) {
+                    container.innerHTML = '<div style="padding: 20px; text-align: center; color: #a0aec0;">אין שיחות עדיין</div>';
+                    return;
+                }
+
+                container.innerHTML = conversations.map(conv => `
+                    <div class="conversation-item" onclick="selectConversation(${conv.other_user_id}, '${conv.username.replace(/'/g, "\\'")}', '${conv.bio.replace(/'/g, "\\'")}')">
+                        <div class="conv-avatar">${conv.username.charAt(0).toUpperCase()}</div>
+                        <div class="conv-content">
+                            <div class="conv-name">${conv.username}</div>
+                            <div class="conv-preview">${conv.last_message ? conv.last_message.substring(0, 40) + '...' : 'אין הודעות'}</div>
+                        </div>
+                    </div>
+                `).join('');
+            } catch (error) {
+                console.error('Error loading conversations:', error);
+            }
+        }
+
+        async function selectConversation(userId, username, usertype) {
+            currentChatUserId = userId;
+            document.getElementById('message-thread').style.display = 'flex';
+            document.getElementById('message-thread').style.flexDirection = 'column';
+            document.getElementById('no-selection').style.display = 'none';
+
+            document.getElementById('thread-username').textContent = username;
+            document.getElementById('thread-usertype').textContent = usertype;
+
+            await loadMessages(userId);
+        }
+
+        async function loadMessages(userId) {
+            try {
+                const messages = await SafeSpaceAPI.getMessagesWith(userId);
+                const container = document.getElementById('messages-container');
+
+                if (!messages || messages.length === 0) {
+                    container.innerHTML = '<div style="padding: 20px; text-align: center; color: #a0aec0;">אין הודעות עדיין. התחל שיחה!</div>';
+                    return;
+                }
+
+                const currentUser = SafeSpaceAPI.getCurrentUser();
+                container.innerHTML = messages.map(msg => `
+                    <div class="message ${msg.sender_id === currentUser.id ? 'sent' : 'received'}">
+                        <div class="message-bubble">${msg.content}</div>
+                        <div class="message-time">${new Date(msg.created_at).toLocaleTimeString()}</div>
+                    </div>
+                `).join('');
+
+                // Scroll to bottom
+                container.scrollTop = container.scrollHeight;
+            } catch (error) {
+                console.error('Error loading messages:', error);
+            }
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('message-input');
+            const content = input.value.trim();
+
+            if (!content || !currentChatUserId) return;
+
+            try {
+                await SafeSpaceAPI.sendMessage(currentChatUserId, content);
+                input.value = '';
+                await loadMessages(currentChatUserId);
+            } catch (error) {
+                console.error('Error sending message:', error);
+                alert('שגיאה בשליחת הודעה');
+            }
+        }
+
+        async function searchPeople() {
+            const query = document.getElementById('search-input').value.trim();
+            if (!query) return;
+
+            try {
+                const people = await SafeSpaceAPI.searchUsers(query);
+                const resultsDiv = document.getElementById('search-results');
+                const resultsContainer = document.getElementById('people-results');
+
+                if (!people || people.length === 0) {
+                    resultsDiv.style.display = 'block';
+                    resultsContainer.innerHTML = '<p style="color: #a0aec0;">לא נמצאו אנשים</p>';
+                    return;
+                }
+
+                resultsDiv.style.display = 'block';
+                resultsContainer.innerHTML = people.map(person => `
+                    <div class="person-card">
+                        <div class="person-header"></div>
+                        <div class="person-avatar">${person.username.charAt(0).toUpperCase()}</div>
+                        <div class="person-body">
+                            <div class="person-name">${person.username}</div>
+                            <div class="person-type">${person.anxiety_type || 'קהילה'}</div>
+                            <div class="person-bio">${person.bio || 'ברוכים הבאים ל-SafeSpace!'}</div>
+                            <div class="person-actions">
+                                <button class="view-profile-btn" onclick="viewProfile(${person.id})">פרופיל</button>
+                                <button class="message-btn" onclick="startChat(${person.id}, '${person.username.replace(/'/g, "\\'")}', '${person.anxiety_type}')">הודעה</button>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            } catch (error) {
+                console.error('Error searching people:', error);
+            }
+        }
+
+        function startChat(userId, username, anxiety_type) {
+            selectConversation(userId, username, anxiety_type);
+            document.getElementById('search-results').style.display = 'none';
+        }
+
+        function viewProfile(userId) {
+            window.location.href = `MyPage.html?user=${userId}`;
+        }
+
+        // Load conversations on page load
+        window.addEventListener('load', () => {
+            if (!SafeSpaceAPI.isLoggedIn()) {
+                window.location.href = 'index.html';
+            }
+            loadConversations();
+        });
+
+        // Auto-load conversations every 5 seconds
+        setInterval(loadConversations, 5000);
+
+        // Allow Enter key to send message
+        document.addEventListener('DOMContentLoaded', () => {
+            const messageInput = document.getElementById('message-input');
+            if (messageInput) {
+                messageInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        sendMessage();
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

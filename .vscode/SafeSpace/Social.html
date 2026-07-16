@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeSpace - Social Feed</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="api.js"></script>
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <a href="index.html" class="nav-item" title="Home">🏠</a>
+        <a href="chats.html" class="nav-item" title="Chat">💬</a>
+        <a href="Videos.html" class="nav-item" title="Videos">🎬</a>
+        <a href="MyPage.html" class="nav-item" title="My Page">👤</a>
+        <a href="Resources.html" class="nav-item" title="Resources">📚</a>
+        <a href="#" onclick="SafeSpaceAPI.logout(); return false;" class="nav-item" title="Logout" style="margin-top: auto; color: #e53e3e;">🚪</a>
+    </nav>
+
+    <main style="max-width: 800px; margin: 0 auto;">
+        <h1>📰 עלי הקהילה</h1>
+        <p>קרא פוסטים מ-SafeSpace קומיוניטי וראה מה אנשים שותפים</p>
+
+        <div class="card">
+            <h2>✨ הנושאים החמים</h2>
+            <p>כמה דברים שאנשים משתפים אותם:</p>
+            <ul style="margin-left: 20px; margin-top: 15px;">
+                <li>💬 חרדה וגורמים פניקה</li>
+                <li>💪 ריפוי מטראומה</li>
+                <li>🌟 טקטיקות התמודדות</li>
+                <li>🎉 ניצחונות יומיומיים</li>
+                <li>🏥 מציאת עזרה מקצועית</li>
+            </ul>
+        </div>
+
+        <div class="safety-box">
+            <h3>קו מוביל הקהילה</h3>
+            <p>קהילתנו בנויה על כבוד, אמפתיה וביטחון. היה טוב לעצמך ולאחרים. אין שיפוטיות - רק תמיכה.</p>
+        </div>
+
+        <!-- Feed -->
+        <div id="feed-container" style="margin-top: 30px;">
+            <p style="color: #a0aec0; text-align: center; padding: 20px;">Loading posts...</p>
+        </div>
+    </main>
+
+    <script>
+        async function loadFeed() {
+            try {
+                const posts = await SafeSpaceAPI.getFeed();
+                const container = document.getElementById('feed-container');
+
+                if (!posts || posts.length === 0) {
+                    container.innerHTML = '<p style="color: #a0aec0; text-align: center; padding: 20px;">אין פוסטים עדיין. היה הראשון!</p>';
+                    return;
+                }
+
+                container.innerHTML = posts.map(post => `
+                    <div class="post">
+                        <div class="post-header">
+                            <div class="post-avatar">${post.username.charAt(0).toUpperCase()}</div>
+                            <div class="post-author">
+                                <div class="post-author-name">${post.username}</div>
+                                <div class="post-author-type">${post.anxiety_type || 'קהילה'}</div>
+                            </div>
+                            <div class="post-time">${new Date(post.created_at).toLocaleDateString()}</div>
+                        </div>
+                        <div class="post-content">${post.content}</div>
+                        <div class="post-actions">
+                            <div class="post-action" onclick="likePost(${post.id})">
+                                ❤️ <span id="likes-${post.id}">${post.likes}</span> Likes
+                            </div>
+                            <div class="post-action" onclick="messageUser(${post.user_id}, '${post.username.replace(/'/g, "\\'")}')">
+                                💬 הודעה
+                            </div>
+                            <div class="post-action" onclick="viewProfile(${post.user_id})">
+                                👤 פרופיל
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            } catch (error) {
+                console.error('Error loading feed:', error);
+            }
+        }
+
+        function viewProfile(userId) {
+            window.location.href = `MyPage.html?user=${userId}`;
+        }
+
+        function messageUser(userId, username) {
+            window.location.href = `chats.html?user=${userId}`;
+        }
+
+        async function likePost(postId) {
+            try {
+                const result = await SafeSpaceAPI.likePost(postId);
+                document.getElementById(`likes-${postId}`).textContent = result.post.likes;
+            } catch (error) {
+                console.error('Error liking post:', error);
+            }
+        }
+
+        // Load feed on page load
+        window.addEventListener('load', () => {
+            if (!SafeSpaceAPI.isLoggedIn()) {
+                window.location.href = 'index.html';
+            }
+            loadFeed();
+        });
+
+        // Auto-refresh every 10 seconds
+        setInterval(loadFeed, 10000);
+    </script>
+</body>
+</html>
+</html>

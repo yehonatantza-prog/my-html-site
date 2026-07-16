@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeSpace - Anxiety by Type</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <a href="index.html" class="nav-item" title="Home">🏠</a>
+        <a href="chats.html" class="nav-item" title="Chat">💬</a>
+        <a href="Videos.html" class="nav-item" title="Videos">🎬</a>
+        <a href="MyPage.html" class="nav-item" title="My Page">👤</a>
+        <a href="Resources.html" class="nav-item" title="Resources">📚</a>
+        <a href="#" onclick="if(typeof SafeSpaceAPI !== 'undefined') SafeSpaceAPI.logout(); else window.location.href='index.html'; return false;" class="nav-item" title="Logout" style="margin-top: auto; color: #e53e3e;">🚪</a>
+    </nav>
+    <script src="api.js"></script>
+
+    <main>
+        <h1>Anxiety By Type</h1>
+        <p>Targeted tips and strategies for specific types of anxiety and fears.</p>
+
+        <h2>😰 Generalized Anxiety Disorder (GAD)</h2>
+        <div class="card">
+            <h3>What It Feels Like</h3>
+            <p>Constant worry about many things. Your mind races between worries, making it hard to concentrate or relax.</p>
+        </div>
+
+        <div class="card">
+            <h3>What Helps</h3>
+            <ul style="margin-left: 20px; margin-top: 15px;">
+                <li><strong>Worry Time:</strong> Set a specific 15-minute window to worry. Outside this time, notice the worry and delay it</li>
+                <li><strong>Grounding:</strong> Use the 5-4-3-2-1 technique throughout the day</li>
+                <li><strong>Movement:</strong> Regular exercise significantly reduces GAD symptoms</li>
+                <li><strong>Limit caffeine:</strong> Can amplify anxiety</li>
+                <li><strong>Challenge thoughts:</strong> Question your worries - what evidence is there? What's the worst that could happen and could you handle it?</li>
+            </ul>
+        </div>
+
+        <h2>😱 Social Anxiety</h2>
+        <div class="card">
+            <h3>What It Feels Like</h3>
+            <p>Fear of social situations, judgment, being watched, or embarrassing yourself. Avoidance of social events.</p>
+        </div>
+
+        <div class="card">
+            <h3>What Helps</h3>
+            <ul style="margin-left: 20px; margin-top: 15px;">
+                <li><strong>Gradual Exposure:</strong> Start small - one person vs. group, shorter vs. longer visits</li>
+                <li><strong>Have a Plan:</strong> Arrive early, have a conversation starter prepared, know where the exit is</li>
+                <li><strong>Focus Outward:</strong> Listen to others instead of monitoring yourself</li>
+                <li><strong>Self-Compassion:</strong> Remember - most people are worried about themselves, not judging you</li>
+                <li><strong>Practice:</strong> Each social interaction is exposure therapy. You're building confidence</li>
+                <li><strong>Join SafeSpace:</strong> Start with online communities where you can practice connection safely</li>
+            </ul>
+        </div>
+
+        <h2>✈️ Specific Phobias</h2>
+        <div class="card">
+            <h3>What It Feels Like</h3>
+            <p>Intense fear of specific things: flying, heights, spiders, needles, driving, water, etc. Fear seems irrational but feels very real.</p>
+        </div>
+
+        <div class="card">
+            <h3>What Helps</h3>
+            <ul style="margin-left: 20px; margin-top: 15px;">
+                <li><strong>Exposure Therapy:</strong> Gradual, repeated exposure to the feared object/situation (with professional support)</li>
+                <li><strong>Education:</strong> Learn facts about your fear - understanding reduces irrationality</li>
+                <li><strong>Desensitization:</strong> Start with images, then videos, then real exposure</li>
+                <li><strong>Coping Statements:</strong> "This discomfort is temporary" "I've done this before"</li>
+                <li><strong>Professional Help:</strong> A therapist can guide you through exposure safely</li>
+            </ul>
+        </div>
+
+        <h2>🚗 Agoraphobia</h2>
+        <div class="card">
+            <h3>What It Feels Like</h3>
+            <p>Fear of being in situations where escape feels difficult or help unavailable. Often leads to staying home. Can be debilitating.</p>
+        </div>
+
+        <div class="card">
+            <h3>What Helps</h3>
+            <ul style="margin-left: 20px; margin-top: 15px;">
+                <li><strong>Start Home:</strong> Small steps to leave the safety zone with support</li>
+                <li><strong>Have a Buddy:</strong> Go places with a trusted person first</li>
+                <li><strong>Grounding Tools:</strong> Carry items that help ground you (favorite music, phone with supportive contact)</li>
+                <li><strong>Recovery is Slow:</strong> Progress may feel small, but any step outward is success</li>
+                <li><strong>Professional Support:</strong> Therapy and sometimes medication can help significantly</li>
+                <li><strong>Connect Online:</strong> Start with SafeSpace community from home</li>
+            </ul>
+        </div>
+
+        <h2>💔 Trauma & PTSD</h2>
+        <div class="card">
+            <h3>What It Feels Like</h3>
+            <p>Intrusive memories, flashbacks, hypervigilance, nightmares, emotional numbness, avoidance of reminders.</p>
+        </div>
+
+        <div class="card">
+            <h3>What Helps</h3>
+            <ul style="margin-left: 20px; margin-top: 15px;">
+                <li><strong>Professional Trauma Therapy:</strong> EMDR, CPT, or Trauma-Focused CBT are evidence-based</li>
+                <li><strong>Safety First:</strong> Create physical and emotional safety in your environment</li>
+                <li><strong>Grounding:</strong> Essential when experiencing flashbacks or intrusive thoughts</li>
+                <li><strong>Self-Compassion:</strong> Your reactions are normal responses to abnormal events</li>
+                <li><strong>Peer Support:</strong> Connect with others who understand trauma in SafeSpace</li>
+                <li><strong>Patience:</strong> Trauma recovery takes time. Celebrate small victories</li>
+            </ul>
+        </div>
+
+        <h2>😴 Anxiety About Sleep</h2>
+        <div class="card">
+            <h3>What It Feels Like</h3>
+            <p>Fear of not sleeping, racing thoughts at bedtime, waking up in panic, fear of the night itself.</p>
+        </div>
+
+        <div class="card">
+            <h3>What Helps</h3>
+            <ul style="margin-left: 20px; margin-top: 15px;">
+                <li><strong>Sleep Hygiene:</strong> Consistent schedule, cool dark room, no screens 30min before bed</li>
+                <li><strong>Relaxation:</strong> Meditation, progressive muscle relaxation, or guided sleep meditation</li>
+                <li><strong>Acceptance:</strong> Trying harder to sleep makes it worse. Accept wakefulness - rest is healing too</li>
+                <li><strong>Get Out of Bed:</strong> If anxious for 20min, get up and do a calm activity, return when sleepy</li>
+                <li><strong>Limit Naps:</strong> Can interfere with nighttime sleep</li>
+                <li><strong>Breathing Exercises:</strong> 4-7-8 breathing is especially good for sleep</li>
+            </ul>
+        </div>
+
+        <h2>💊 Health Anxiety</h2>
+        <div class="card">
+            <h3>What It Feels Like</h3>
+            <p>Excessive worry about having a serious illness, constant body checking, frequent doctor visits, fear of symptoms.</p>
+        </div>
+
+        <div class="card">
+            <h3>What Helps</h3>
+            <ul style="margin-left: 20px; margin-top: 15px;">
+                <li><strong>Limit Checking:</strong> Resist the urge to check symptoms or research online</li>
+                <li><strong>Resist Reassurance:</strong> Getting reassurance provides temporary relief then anxiety returns</li>
+                <li><strong>See Doctor Once:</strong> Get a thorough checkup, then trust the results</li>
+                <li><strong>Challenge Thoughts:</strong> "What evidence do I have?" "How many times has this worried turned out to be real?"</li>
+                <li><strong>Accept Uncertainty:</strong> We can't know 100% we're healthy - learning to live with this uncertainty helps</li>
+                <li><strong>Cognitive Therapy:</strong> Very effective for health anxiety</li>
+            </ul>
+        </div>
+
+        <h2>🎓 Performance Anxiety</h2>
+        <div class="card">
+            <h3>What It Feels Like</h3>
+            <p>Fear of public speaking, tests, performances, or doing something while being watched. Worry about messing up.</p>
+        </div>
+
+        <div class="card">
+            <h3>What Helps</h3>
+            <ul style="margin-left: 20px; margin-top: 15px;">
+                <li><strong>Practice:</strong> The more prepared you are, the less anxious you'll be</li>
+                <li><strong>Normalize Anxiety:</strong> Your body is just helping you perform - use that energy</li>
+                <li><strong>Breathing:</strong> Practice calming breathing before the performance</li>
+                <li><strong>Reframe:</strong> "Excitement" and "anxiety" have the same physical symptoms. Call it excitement!</li>
+                <li><strong>Exposure:</strong> Start small (present to 2 people) and gradually increase audience</li>
+                <li><strong>Focus on Content:</strong> Remember your audience wants you to succeed</li>
+            </ul>
+        </div>
+
+        <div class="safety-box">
+            <h3>Remember</h3>
+            <p>These categories often overlap, and everyone's experience is unique. A therapist can help identify what you're experiencing and create a personalized plan. You're not alone in any of these - many people are navigating the same fears and finding their way forward.</p>
+        </div>
+    </main>
+</body>
+</html>

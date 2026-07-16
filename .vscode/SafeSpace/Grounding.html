@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeSpace - Grounding Techniques</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <a href="index.html" class="nav-item" title="Home">🏠</a>
+        <a href="chats.html" class="nav-item" title="Chat">💬</a>
+        <a href="Videos.html" class="nav-item" title="Videos">🎬</a>
+        <a href="MyPage.html" class="nav-item" title="My Page">👤</a>
+        <a href="Resources.html" class="nav-item" title="Resources">📚</a>
+        <a href="#" onclick="if(typeof SafeSpaceAPI !== 'undefined') SafeSpaceAPI.logout(); else window.location.href='index.html'; return false;" class="nav-item" title="Logout" style="margin-top: auto; color: #e53e3e;">🚪</a>
+    </nav>
+    <script src="api.js"></script>
+
+    <main>
+        <h1>Grounding & Calming Techniques</h1>
+        <p>Quick techniques to help you feel present and calm during moments of anxiety.</p>
+
+        <h2>🌬️ Breathing Exercises</h2>
+        <div class="card">
+            <h3>4-7-8 Breathing</h3>
+            <p>A simple breathing pattern that activates your body's relaxation response:</p>
+            <ul style="margin-left: 20px; margin-top: 15px;">
+                <li>Breathe in through your nose for 4 counts</li>
+                <li>Hold your breath for 7 counts</li>
+                <li>Exhale slowly through your mouth for 8 counts</li>
+                <li>Repeat 3-4 times or until you feel calmer</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Box Breathing</h3>
+            <p>Steady breathing pattern that helps calm your nervous system:</p>
+            <ul style="margin-left: 20px; margin-top: 15px;">
+                <li>Breathe in for 4 counts</li>
+                <li>Hold for 4 counts</li>
+                <li>Breathe out for 4 counts</li>
+                <li>Hold for 4 counts</li>
+                <li>Repeat as needed</li>
+            </ul>
+        </div>
+
+        <h2>⚓ Grounding Techniques</h2>
+        <div class="card">
+            <h3>5-4-3-2-1 Technique</h3>
+            <p>Engage your senses to bring you back to the present moment:</p>
+            <ul style="margin-left: 20px; margin-top: 15px;">
+                <li><strong>5 things you see:</strong> Name 5 objects you can see around you</li>
+                <li><strong>4 things you touch:</strong> Feel 4 different textures</li>
+                <li><strong>3 things you hear:</strong> Listen for 3 sounds</li>
+                <li><strong>2 things you smell:</strong> Notice 2 scents</li>
+                <li><strong>1 thing you taste:</strong> Experience 1 taste</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Progressive Muscle Relaxation</h3>
+            <p>Systematically relax your body by tensing and releasing muscles:</p>
+            <ul style="margin-left: 20px; margin-top: 15px;">
+                <li>Start with your toes and slowly work up through your body</li>
+                <li>Tense each muscle group for 5 seconds</li>
+                <li>Release and notice the relaxation</li>
+                <li>Move gradually to the next muscle group</li>
+            </ul>
+        </div>
+
+        <h2>🌿 Mindfulness Practices</h2>
+        <div class="card">
+            <h3>Body Scan Meditation</h3>
+            <p>A peaceful practice to connect with your body and release tension:</p>
+            <p>Lie down comfortably and slowly bring awareness through each part of your body, from toes to head. Notice sensations without judgment. This practice takes 10-15 minutes.</p>
+            <button class="btn">Try Guided Meditation</button>
+        </div>
+
+        <div class="card">
+            <h3>Mindful Observation</h3>
+            <p>Choose an object and observe it closely for several minutes. Notice:</p>
+            <ul style="margin-left: 20px; margin-top: 15px;">
+                <li>Its colors and patterns</li>
+                <li>Its texture and weight</li>
+                <li>How light plays on its surface</li>
+                <li>Any details you haven't noticed before</li>
+            </ul>
+        </div>
+
+        <h2>💬 Quick Self-Talk</h2>
+        <div class="safety-box">
+            <h3>Affirmations for Anxiety</h3>
+            <p>Repeat these when you need reassurance:</p>
+            <ul style="margin-left: 20px; margin-top: 15px;">
+                <li>"This feeling is temporary and will pass"</li>
+                <li>"I am safe in this moment"</li>
+                <li>"I have gotten through difficult moments before"</li>
+                <li>"My body knows how to relax"</li>
+                <li>"I am doing my best, and that is enough"</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>⏰ Use What Works for You</h2>
+            <p>Different techniques work for different people at different times. Try several and notice which ones help you feel:</p>
+            <ul style="margin-left: 20px; margin-top: 15px;">
+                <li>More grounded in the present</li>
+                <li>More physically relaxed</li>
+                <li>Less anxious thoughts</li>
+                <li>More in control of your emotions</li>
+            </ul>
+        </div>
+    </main>
+</body>
+</html>

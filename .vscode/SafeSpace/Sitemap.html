@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeSpace - All Pages</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <a href="index.html" class="nav-item" title="Home">🏠</a>
+        <a href="chats.html" class="nav-item" title="Chat">💬</a>
+        <a href="Videos.html" class="nav-item" title="Videos">🎬</a>
+        <a href="MyPage.html" class="nav-item" title="My Page">👤</a>
+        <a href="Resources.html" class="nav-item" title="Resources">📚</a>
+        <a href="#" onclick="if(typeof SafeSpaceAPI !== 'undefined') SafeSpaceAPI.logout(); else window.location.href='index.html'; return false;" class="nav-item" title="Logout" style="margin-top: auto; color: #e53e3e;">🚪</a>
+    </nav>
+    <script src="api.js"></script>
+
+    <main>
+        <h1>All SafeSpace Pages</h1>
+        <p>Find all the resources and support available on SafeSpace.</p>
+
+        <h2>🏠 Main Pages</h2>
+        <div class="resources-grid">
+            <div class="resource-card">
+                <div class="resource-icon">🏠</div>
+                <h3><a href="index.html" style="color: #4a6b89; text-decoration: none;">Home</a></h3>
+                <p>Welcome to SafeSpace. Learn about our mission and get started.</p>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">💬</div>
+                <h3><a href="chats.html" style="color: #4a6b89; text-decoration: none;">Chat</a></h3>
+                <p>Connect with other members and join real conversations.</p>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">🎬</div>
+                <h3><a href="Videos.html" style="color: #4a6b89; text-decoration: none;">Videos</a></h3>
+                <p>Motivational stories, expert advice, and quick wellness practices.</p>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">👤</div>
+                <h3><a href="MyPage.html" style="color: #4a6b89; text-decoration: none;">My Page</a></h3>
+                <p>Your personal profile and journey tracking.</p>
+            </div>
+        </div>
+
+        <h2>📚 Resources & Learning</h2>
+        <div class="resources-grid">
+            <div class="resource-card">
+                <div class="resource-icon">📚</div>
+                <h3><a href="Resources.html" style="color: #4a6b89; text-decoration: none;">Resources</a></h3>
+                <p>Wellness tools, learning materials, and professional help.</p>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">🧠</div>
+                <h3><a href="Understanding.html" style="color: #4a6b89; text-decoration: none;">Understanding Anxiety</a></h3>
+                <p>Learn what's happening in your body and brain during anxiety.</p>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">🧘</div>
+                <h3><a href="Grounding.html" style="color: #4a6b89; text-decoration: none;">Grounding Techniques</a></h3>
+                <p>Quick techniques to calm anxiety and stay present.</p>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">✨</div>
+                <h3><a href="DailyTips.html" style="color: #4a6b89; text-decoration: none;">Daily Wellness Tips</a></h3>
+                <p>Small, manageable practices for everyday wellness.</p>
+            </div>
+        </div>
+
+        <h2>🆘 Crisis & Support</h2>
+        <div class="resources-grid">
+            <div class="resource-card">
+                <div class="resource-icon">🆘</div>
+                <h3><a href="Crisis.html" style="color: #4a6b89; text-decoration: none;">Crisis Support</a></h3>
+                <p>Immediate help and crisis resources. You're not alone.</p>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">ℹ️</div>
+                <h3><a href="About.html" style="color: #4a6b89; text-decoration: none;">About SafeSpace</a></h3>
+                <p>Learn our mission, values, and community guidelines.</p>
+            </div>
+        </div>
+
+        <h2>🎯 Getting Started</h2>
+        <div class="card">
+            <p>Not sure where to begin? Here are some suggestions:</p>
+            <ul style="margin-left: 20px; margin-top: 15px;">
+                <li><strong>New to SafeSpace?</strong> Start with the <a href="index.html" style="color: #5b7c99;">Home page</a> to learn about us</li>
+                <li><strong>In crisis?</strong> Go to <a href="Crisis.html" style="color: #5b7c99;">Crisis Support</a> immediately</li>
+                <li><strong>Want to learn about anxiety?</strong> Read <a href="Understanding.html" style="color: #5b7c99;">Understanding Anxiety</a></li>
+                <li><strong>Need quick help?</strong> Check out <a href="Grounding.html" style="color: #5b7c99;">Grounding Techniques</a></li>
+                <li><strong>Want daily support?</strong> Try <a href="DailyTips.html" style="color: #5b7c99;">Daily Wellness Tips</a></li>
+                <li><strong>Looking for resources?</strong> Visit <a href="Resources.html" style="color: #5b7c99;">Resources</a></li>
+                <li><strong>Ready to connect?</strong> Join <a href="Social.html" style="color: #5b7c99;">Social Feed</a> or <a href="chats.html" style="color: #5b7c99;">Messages</a></li>
+            </ul>
+        </div>
+
+        <div class="safety-box">
+            <h3>You Deserve Support</h3>
+            <p>Whatever brings you here, we're glad you're taking a step toward wellness. Every journey is unique, and we're honored to support yours. Take your time exploring. There's no rush. We're here for you.</p>
+        </div>
+    </main>
+</body>
+</html>

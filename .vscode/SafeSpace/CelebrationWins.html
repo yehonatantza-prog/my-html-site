@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeSpace - Celebrate Your Wins</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <a href="index.html" class="nav-item" title="Home">🏠</a>
+        <a href="chats.html" class="nav-item" title="Chat">💬</a>
+        <a href="Videos.html" class="nav-item" title="Videos">🎬</a>
+        <a href="MyPage.html" class="nav-item" title="My Page">👤</a>
+        <a href="Resources.html" class="nav-item" title="Resources">📚</a>
+        <a href="#" onclick="if(typeof SafeSpaceAPI !== 'undefined') SafeSpaceAPI.logout(); else window.location.href='index.html'; return false;" class="nav-item" title="Logout" style="margin-top: auto; color: #e53e3e;">🚪</a>
+    </nav>
+    <script src="api.js"></script>
+
+    <main>
+        <h1>🎉 Celebrate Your Wins</h1>
+        <p>Every step forward, no matter how small, deserves recognition.</p>
+
+        <div class="safety-box">
+            <h3>What Counts as a Win?</h3>
+            <p>Progress isn't always obvious. These all count as victories in your journey:</p>
+            <ul style="margin-left: 20px; margin-top: 15px;">
+                <li>Getting out of bed on a hard day</li>
+                <li>Drinking water and eating a meal</li>
+                <li>Taking a shower or getting dressed</li>
+                <li>Reaching out to someone</li>
+                <li>Using a grounding technique when anxious</li>
+                <li>Saying "no" to protect your peace</li>
+                <li>Showing up to therapy or a support group</li>
+                <li>Admitting you need help</li>
+                <li>Trying something new, even if it felt scary</li>
+                <li>Making it to the end of a difficult day</li>
+                <li>Being kind to yourself</li>
+                <li>Simply surviving - that counts!</li>
+            </ul>
+        </div>
+
+        <h2>✨ Types of Wins to Celebrate</h2>
+
+        <div class="card">
+            <h3>🎯 Anxiety Wins</h3>
+            <ul style="margin-left: 20px; margin-top: 15px;">
+                <li>Went somewhere despite anxiety</li>
+                <li>Used breathing techniques successfully</li>
+                <li>Had anxiety but didn't let it stop me</li>
+                <li>Recognized a worry spiral and interrupted it</li>
+                <li>Did something I've been avoiding</li>
+                <li>Stayed calm in a situation that usually triggers me</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>💪 Strength Wins</h3>
+            <ul style="margin-left: 20px; margin-top: 15px;">
+                <li>Set a boundary I've been afraid to set</li>
+                <li>Said "no" when I wanted to say "yes"</li>
+                <li>Advocated for myself</li>
+                <li>Asked for help</li>
+                <li>Spoke my truth</li>
+                <li>Chose myself over someone else's expectations</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>💚 Self-Care Wins</h3>
+            <ul style="margin-left: 20px; margin-top: 15px;">
+                <li>Went to bed on time</li>
+                <li>Exercised or moved my body</li>
+                <li>Took my medication as prescribed</li>
+                <li>Journaled or expressed my feelings</li>
+                <li>Took time for myself</li>
+                <li>Did something that brought me joy</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>🤝 Connection Wins</h3>
+            <ul style="margin-left: 20px; margin-top: 15px;">
+                <li>Reached out to someone</li>
+                <li>Went to a social event</li>
+                <li>Made a new friend</li>
+                <li>Had a deep conversation</li>
+                <li>Joined SafeSpace community</li>
+                <li>Shared something vulnerable</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>🧠 Mindset Wins</h3>
+            <ul style="margin-left: 20px; margin-top: 15px;">
+                <li>Challenged a negative thought</li>
+                <li>Had compassion for myself</li>
+                <li>Let go of something out of my control</li>
+                <li>Found silver lining in a difficult situation</li>
+                <li>Recognized my worth</li>
+                <li>Decided to try again tomorrow</li>
+            </ul>
+        </div>
+
+        <h2>🎊 How to Celebrate</h2>
+
+        <div class="resources-grid">
+            <div class="resource-card">
+                <div class="resource-icon">📝</div>
+                <h3>Journal It</h3>
+                <p>Write down your wins. Look back when you're struggling to remember how far you've come.</p>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">👥</div>
+                <h3>Share It</h3>
+                <p>Tell someone you trust. Share on SafeSpace. Let others celebrate with you.</p>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">🎁</div>
+                <h3>Treat Yourself</h3>
+                <p>Small celebration - favorite snack, song, bath, favorite show. You deserve it.</p>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">📸</div>
+                <h3>Document It</h3>
+                <p>Take a photo, create a list, mark it on a calendar. Make it visible.</p>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">🙏</div>
+                <h3>Acknowledge It</h3>
+                <p>Simply say "I did that" or "I'm proud of me". Internal recognition matters.</p>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">🔄</div>
+                <h3>Repeat It</h3>
+                <p>Do it again tomorrow. Build on your wins. Create momentum.</p>
+            </div>
+        </div>
+
+        <h2>📊 Track Your Progress</h2>
+
+        <div class="card">
+            <h3>Create a Win Jar</h3>
+            <p>Write your wins on slips of paper and put them in a jar. On hard days, pull some out and remind yourself of your strength.</p>
+        </div>
+
+        <div class="card">
+            <h3>Weekly Wins Reflection</h3>
+            <p>Every Sunday, write down 3 wins from the week, no matter how small. You'll be amazed at what you notice.</p>
+        </div>
+
+        <div class="card">
+            <h3>Milestone Celebration</h3>
+            <p>Mark important milestones:</p>
+            <ul style="margin-left: 20px; margin-top: 15px;">
+                <li>1 week anxiety-free</li>
+                <li>First therapy session</li>
+                <li>1 month of consistent journaling</li>
+                <li>Tried something that scared me</li>
+                <li>1 year of recovery</li>
+            </ul>
+        </div>
+
+        <h2>💫 What Others Have Celebrated</h2>
+
+        <div class="card" style="background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%); border-left-color: #66bb6a;">
+            <p><em>"I went to a social event for the first time in months. I was anxious but I went anyway. That's a win."</em></p>
+            <p style="font-size: 14px; color: #666; margin-top: 10px;">— Anonymous Community Member</p>
+        </div>
+
+        <div class="card" style="background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%); border-left-color: #66bb6a;">
+            <p><em>"I told my therapist the truth for the first time. It was scary but also relieving. I'm proud I was honest."</em></p>
+            <p style="font-size: 14px; color: #666; margin-top: 10px;">— Anonymous Community Member</p>
+        </div>
+
+        <div class="card" style="background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%); border-left-color: #66bb6a;">
+            <p><em>"I had a panic attack but I didn't go to the ER. I used my grounding techniques and it passed. I can do this."</em></p>
+            <p style="font-size: 14px; color: #666; margin-top: 10px;">— Anonymous Community Member</p>
+        </div>
+
+        <div class="safety-box" style="margin-top: 40px;">
+            <h3>Your Wins Matter</h3>
+            <p>In a world that often focuses on what's wrong, take time to celebrate what's right. Celebrate your courage. Celebrate your effort. Celebrate your survival. Celebrate YOU.</p>
+        </div>
+
+        <div class="card">
+            <h2>🎯 Start Today</h2>
+            <p>What's one win you had today or this week? No matter how small, acknowledge it. Write it down. You've earned it.</p>
+            <button class="btn">Share Your Win in Community</button>
+        </div>
+    </main>
+</body>
+</html>

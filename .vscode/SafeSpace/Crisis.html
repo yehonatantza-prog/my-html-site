@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeSpace - Crisis Support</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <a href="index.html" class="nav-item" title="Home">🏠</a>
+        <a href="chats.html" class="nav-item" title="Chat">💬</a>
+        <a href="Videos.html" class="nav-item" title="Videos">🎬</a>
+        <a href="MyPage.html" class="nav-item" title="My Page">👤</a>
+        <a href="Resources.html" class="nav-item" title="Resources">📚</a>
+        <a href="#" onclick="if(typeof SafeSpaceAPI !== 'undefined') SafeSpaceAPI.logout(); else window.location.href='index.html'; return false;" class="nav-item" title="Logout" style="margin-top: auto; color: #e53e3e;">🚪</a>
+    </nav>
+    <script src="api.js"></script>
+
+    <main>
+        <h1>🆘 If You're in Crisis</h1>
+        <p>If you're having thoughts of self-harm or are in immediate danger, please reach out for professional help right away.</p>
+
+        <div style="background: linear-gradient(135deg, #ffe8e8 0%, #fff0f0 100%); border-left: 4px solid #ff6b6b; padding: 25px; border-radius: 8px; margin: 20px 0;">
+            <h2 style="color: #d63031; margin-bottom: 15px;">Immediate Help</h2>
+            <p style="font-size: 18px; margin-bottom: 15px;"><strong>National Crisis Hotline:</strong> 988 (US)</p>
+            <p style="font-size: 18px; margin-bottom: 15px;"><strong>Crisis Text Line:</strong> Text HOME to 741741</p>
+            <p style="font-size: 18px; margin-bottom: 20px;"><strong>International Association for Suicide Prevention:</strong> https://www.iasp.info/resources/Crisis_Centres/</p>
+            <p style="font-size: 16px; color: #d63031;"><strong>If you're in immediate danger, call emergency services (911 in US) or go to your nearest emergency room.</strong></p>
+        </div>
+
+        <h2>💡 What to Do Right Now</h2>
+        <div class="card">
+            <h3>Step 1: Reach Out</h3>
+            <p>Call a crisis line, text a trusted person, or go to an emergency room. You don't have to be alone.</p>
+        </div>
+
+        <div class="card">
+            <h3>Step 2: Ground Yourself</h3>
+            <p>Try the 5-4-3-2-1 grounding technique to bring yourself to the present moment. Focus on what you can see, touch, hear, smell, and taste around you.</p>
+        </div>
+
+        <div class="card">
+            <h3>Step 3: Move Your Body</h3>
+            <p>Go for a walk, splash cold water on your face, or do some stretches. Physical movement can help interrupt the crisis response.</p>
+        </div>
+
+        <div class="card">
+            <h3>Step 4: Practice Safety</h3>
+            <p>Remove means of harm from your immediate area. Ask a trusted person to stay with you or check in frequently.</p>
+        </div>
+
+        <h2>📞 Resources by Location</h2>
+
+        <div class="resources-grid">
+            <div class="resource-card">
+                <h3>United States</h3>
+                <p><strong>988 Suicide & Crisis Lifeline</strong><br>Call or text 988</p>
+                <p><strong>Crisis Text Line</strong><br>Text HOME to 741741</p>
+            </div>
+
+            <div class="resource-card">
+                <h3>Canada</h3>
+                <p><strong>Canada Suicide Prevention Service</strong><br>1-833-456-4566</p>
+                <p><strong>Talk Suicide Canada</strong><br>Text 613-564-2433</p>
+            </div>
+
+            <div class="resource-card">
+                <h3>United Kingdom</h3>
+                <p><strong>Samaritans</strong><br>116 123</p>
+                <p><strong>Crisis Text Line UK</strong><br>Text SHOUT to 85258</p>
+            </div>
+
+            <div class="resource-card">
+                <h3>Australia</h3>
+                <p><strong>Lifeline</strong><br>13 11 14</p>
+                <p><strong>13YARN</strong><br>13 92 76</p>
+            </div>
+
+            <div class="resource-card">
+                <h3>Ireland</h3>
+                <p><strong>Samaritans</strong><br>116 123</p>
+                <p><strong>Pieta House</strong><br>1800 247 247</p>
+            </div>
+
+            <div class="resource-card">
+                <h3>New Zealand</h3>
+                <p><strong>1737 - Need to Talk?</strong><br>1737 (Free call or text)</p>
+                <p><strong>Samaritans</strong><br>0800 726 666</p>
+            </div>
+        </div>
+
+        <h2>💚 Important Reminders</h2>
+        <div class="safety-box">
+            <h3>Your Life Has Value</h3>
+            <p>Even when things feel hopeless, circumstances can change. Many people who have felt suicidal have gone on to find meaning, purpose, and joy in their lives.</p>
+        </div>
+
+        <div class="safety-box">
+            <h3>You Are Not Weak</h3>
+            <p>Having a mental health crisis doesn't make you weak. It makes you human. Seeking help is one of the bravest things you can do.</p>
+        </div>
+
+        <div class="safety-box">
+            <h3>This Is Temporary</h3>
+            <p>The crisis you're experiencing right now will pass. Your feelings are valid, but they are not permanent. There is help available, and recovery is possible.</p>
+        </div>
+
+        <div class="card">
+            <h2>🤝 After the Crisis</h2>
+            <p>Once you've gotten through the acute crisis, consider:</p>
+            <ul style="margin-left: 20px; margin-top: 15px;">
+                <li>Scheduling a therapy appointment</li>
+                <li>Connecting with a support group in our SafeSpace community</li>
+                <li>Creating a safety plan with a mental health professional</li>
+                <li>Building a support network of trusted people</li>
+                <li>Taking care of your physical health (sleep, nutrition, movement)</li>
+            </ul>
+        </div>
+
+        <div class="safety-box" style="margin-top: 40px;">
+            <h3>You Matter</h3>
+            <p>Your story isn't over. The world needs you in it. Please reach out today. Help is available, and recovery is possible. You don't have to do this alone.</p>
+        </div>
+    </main>
+</body>
+</html>

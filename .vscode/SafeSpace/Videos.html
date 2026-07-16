@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeSpace - Motivational Videos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <a href="index.html" class="nav-item" title="Home">🏠</a>
+        <a href="chats.html" class="nav-item" title="Chat">💬</a>
+        <a href="Videos.html" class="nav-item active" title="Videos">🎬</a>
+        <a href="MyPage.html" class="nav-item" title="My Page">👤</a>
+        <a href="Resources.html" class="nav-item" title="Resources">📚</a>
+        <a href="#" onclick="if(typeof SafeSpaceAPI !== 'undefined') SafeSpaceAPI.logout(); else window.location.href='index.html'; return false;" class="nav-item" title="Logout" style="margin-top: auto; color: #e53e3e;">🚪</a>
+    </nav>
+    <script src="api.js"></script>
+
+    <main>
+        <h1>Motivational Videos</h1>
+        <p>Stories of hope, courage, and transformation. Real people, real journeys, real recovery.</p>
+
+        <h2>Personal Stories</h2>
+        <div class="videos-grid">
+            <div class="video-card">
+                <div class="video-thumbnail"></div>
+                <div class="video-info">
+                    <h3>How I Overcame Panic Disorder</h3>
+                    <p>Sarah shares her 3-year journey from daily panic attacks to living panic-free. Real, honest, and hopeful.</p>
+                    <div class="video-author">Sarah's Journey • 12 min</div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-thumbnail" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+                <div class="video-info">
+                    <h3>Breaking the Social Anxiety Cycle</h3>
+                    <p>James reveals the exact techniques that helped him go from avoiding people to thriving in social settings.</p>
+                    <div class="video-author">James's Recovery • 15 min</div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-thumbnail" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+                <div class="video-info">
+                    <h3>Healing From Trauma: My Story</h3>
+                    <p>Emma talks openly about processing trauma and rebuilding her life with compassion and support.</p>
+                    <div class="video-author">Emma's Healing • 18 min</div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-thumbnail" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);"></div>
+                <div class="video-info">
+                    <h3>Living With Anxiety (Not Despite It)</h3>
+                    <p>Marcus shares his mindset shift that changed everything - learning to coexist with anxiety rather than fight it.</p>
+                    <div class="video-author">Marcus's Perspective • 11 min</div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-thumbnail" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);"></div>
+                <div class="video-info">
+                    <h3>Small Steps Lead to Big Change</h3>
+                    <p>Lisa talks about how seemingly small daily practices added up to completely transform her mental health.</p>
+                    <div class="video-author">Lisa's Progress • 14 min</div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-thumbnail" style="background: linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%);"></div>
+                <div class="video-info">
+                    <h3>From Crisis to Thriving</h3>
+                    <p>David's honest account of hitting rock bottom with depression and finding his way back to hope.</p>
+                    <div class="video-author">David's Journey • 16 min</div>
+                </div>
+            </div>
+        </div>
+
+        <h2>Expert Insights</h2>
+        <div class="videos-grid">
+            <div class="video-card">
+                <div class="video-thumbnail" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                <div class="video-info">
+                    <h3>Understanding the Anxiety Cycle</h3>
+                    <p>Dr. Patricia Miller explains what happens in your brain during anxiety and why understanding this is key to recovery.</p>
+                    <div class="video-author">Psychology Today • 12 min</div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-thumbnail" style="background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%);"></div>
+                <div class="video-info">
+                    <h3>CBT Techniques That Actually Work</h3>
+                    <p>Licensed therapist Dr. James Chen walks through practical CBT exercises you can use today.</p>
+                    <div class="video-author">Therapy Basics • 10 min</div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-thumbnail" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+                <div class="video-info">
+                    <h3>The Science of Trauma Recovery</h3>
+                    <p>Dr. Susan Harris explains how trauma affects the brain and the evidence-based approaches to healing.</p>
+                    <div class="video-author">Trauma Psychology • 17 min</div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-thumbnail" style="background: linear-gradient(135deg, #fed6e3 0%, #a8edea 100%);"></div>
+                <div class="video-info">
+                    <h3>Mindfulness for Anxiety</h3>
+                    <p>Meditation expert Dr. Robert Kim introduces mindfulness techniques backed by decades of research.</p>
+                    <div class="video-author">Mindfulness Institute • 13 min</div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-thumbnail" style="background: linear-gradient(135deg, #ff6a88 0%, #ff9a56 100%);"></div>
+                <div class="video-info">
+                    <h3>Building Your Support Network</h3>
+                    <p>Social psychologist Dr. Angela Davis on why connection is crucial and how to build meaningful support.</p>
+                    <div class="video-author">Social Psychology • 11 min</div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-thumbnail" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);"></div>
+                <div class="video-info">
+                    <h3>Sleep, Anxiety & Mental Health</h3>
+                    <p>Sleep specialist Dr. Maria Garcia discusses the critical connection between sleep and anxiety recovery.</p>
+                    <div class="video-author">Sleep Medicine • 14 min</div>
+                </div>
+            </div>
+        </div>
+
+        <h2>Quick Practices</h2>
+        <div class="videos-grid">
+            <div class="video-card">
+                <div class="video-thumbnail" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                <div class="video-info">
+                    <h3>5-Minute Grounding Exercise</h3>
+                    <p>A quick technique to use when anxiety peaks. Can be done anywhere, anytime.</p>
+                    <div class="video-author">Daily Practice • 5 min</div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-thumbnail" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+                <div class="video-info">
+                    <h3>Guided Sleep Meditation</h3>
+                    <p>Calm your mind and body before sleep. Perfect for bedtime anxiety.</p>
+                    <div class="video-author">Sleep Wellness • 20 min</div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-thumbnail" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+                <div class="video-info">
+                    <h3>Box Breathing Tutorial</h3>
+                    <p>Simple, calming breathing technique. Used by athletes, military, and anxiety sufferers everywhere.</p>
+                    <div class="video-author">Breathing Techniques • 7 min</div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-thumbnail" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);"></div>
+                <div class="video-info">
+                    <h3>Progressive Muscle Relaxation</h3>
+                    <p>Release physical tension that comes with anxiety through this guided practice.</p>
+                    <div class="video-author">Relaxation Training • 15 min</div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-thumbnail" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);"></div>
+                <div class="video-info">
+                    <h3>Morning Anxiety Reset</h3>
+                    <p>Start your day with this energizing routine that sets the tone for less anxiety.</p>
+                    <div class="video-author">Morning Routine • 10 min</div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-thumbnail" style="background: linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%);"></div>
+                <div class="video-info">
+                    <h3>Self-Compassion Meditation</h3>
+                    <p>Learn to talk to yourself the way you'd talk to a good friend going through a tough time.</p>
+                    <div class="video-author">Wellness Practice • 12 min</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Share Your Video</h2>
+            <p>Have a motivational story or helpful technique? We'd love to feature your video and inspire others.</p>
+            <button class="btn">Submit Your Video</button>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeSpace - Resources</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <a href="index.html" class="nav-item" title="Home">🏠</a>
+        <a href="chats.html" class="nav-item" title="Chat">💬</a>
+        <a href="Videos.html" class="nav-item" title="Videos">🎬</a>
+        <a href="MyPage.html" class="nav-item" title="My Page">👤</a>
+        <a href="Resources.html" class="nav-item active" title="Resources">📚</a>
+        <a href="#" onclick="if(typeof SafeSpaceAPI !== 'undefined') SafeSpaceAPI.logout(); else window.location.href='index.html'; return false;" class="nav-item" title="Logout" style="margin-top: auto; color: #e53e3e;">🚪</a>
+    </nav>
+    <script src="api.js"></script>
+
+    <main>
+        <h1>Resources & Support</h1>
+        <p>Helpful tools, guides, and professional resources to support your wellness journey.</p>
+
+        <h2>🧘 Wellness Tools</h2>
+        <div class="resources-grid">
+            <div class="resource-card">
+                <div class="resource-icon">🧘</div>
+                <h3>Meditation Guide</h3>
+                <p>Learn guided meditations and breathing exercises for anxiety relief and relaxation.</p>
+                <button class="btn btn-secondary">Explore</button>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">📔</div>
+                <h3>Journaling</h3>
+                <p>Express your thoughts and feelings through structured journaling prompts.</p>
+                <button class="btn btn-secondary">Start Journaling</button>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">🎬</div>
+                <h3>Video Library</h3>
+                <p>Curated videos about coping strategies, mental health, and personal growth.</p>
+                <button class="btn btn-secondary">Watch Videos</button>
+            </div>
+        </div>
+
+        <h2>💬 Learning Resources</h2>
+        <div class="card">
+            <h3>Understanding Anxiety</h3>
+            <p>Learn what happens in your body during anxiety, and why your reactions are normal responses.</p>
+            <button class="btn">Read More</button>
+        </div>
+
+        <div class="card">
+            <h3>Trauma & Recovery</h3>
+            <p>Educational resources about trauma, healing pathways, and recovery techniques.</p>
+            <button class="btn">Read More</button>
+        </div>
+
+        <div class="card">
+            <h3>Coping Strategies</h3>
+            <p>Practical techniques you can use daily to manage anxiety, panic, and stress.</p>
+            <button class="btn">Read More</button>
+        </div>
+
+        <h2>👨‍⚕️ Professional Help</h2>
+        <div class="safety-box">
+            <h3>When to Seek Professional Support</h3>
+            <p>A therapist or counselor can provide personalized treatment. Consider seeking professional help if you're experiencing:</p>
+            <ul style="margin-left: 20px; margin-top: 15px;">
+                <li>Persistent anxiety or panic attacks</li>
+                <li>Difficulty with daily activities</li>
+                <li>Thoughts of self-harm</li>
+                <li>Unprocessed trauma</li>
+                <li>Any crisis situation</li>
+            </ul>
+        </div>
+
+        <div class="resources-grid">
+            <div class="resource-card">
+                <div class="resource-icon">🏥</div>
+                <h3>Therapist Finder</h3>
+                <p>Find licensed therapists specializing in anxiety, trauma, and mental health.</p>
+                <button class="btn btn-secondary">Find Help</button>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">☎️</div>
+                <h3>Crisis Lines</h3>
+                <p>24/7 crisis support from trained counselors. You're not alone in this moment.</p>
+                <button class="btn btn-secondary">Get Help Now</button>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">📱</div>
+                <h3>Mental Health Apps</h3>
+                <p>Recommended apps for therapy, meditation, and mental health support.</p>
+                <button class="btn btn-secondary">View Apps</button>
+            </div>
+        </div>
+
+        <h2>📚 Reading List</h2>
+        <div class="card">
+            <h3>Recommended Books</h3>
+            <ul style="margin-left: 20px; margin-top: 15px;">
+                <li><strong>"The Anxiety and Phobia Workbook"</strong> by Edmund J. Bourne - Practical exercises for managing anxiety</li>
+                <li><strong>"What Happened to You?"</strong> by Bruce D. Perry and Oprah Winfrey - Understanding trauma</li>
+                <li><strong>"The Body Keeps the Score"</strong> by Bessel van der Kolk - Trauma and recovery</li>
+                <li><strong>"Feeling Good"</strong> by David D. Burns - Cognitive behavioral techniques</li>
+            </ul>
+        </div>
+
+        <div class="safety-box">
+            <h3>Remember</h3>
+            <p>Recovery is not linear. Progress is not always visible. Be patient and compassionate with yourself. Every small step forward is worth celebrating. You deserve support and healing.</p>
+        </div>
+    </main>
+</body>
+</html>
